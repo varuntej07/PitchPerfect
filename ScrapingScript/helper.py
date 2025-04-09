@@ -15,7 +15,7 @@ def retry(max_attempts, delay):
                     return await func(*args, **kwargs)
                 except Exception as e:
                     attempts += 1
-                    print(f"[Error] in {func.__name__} failed: {e}. Re-trying {attempts}/{max_attempts}...")
+                    print(f"[Error] in {func.__name__} : {e}. Re-trying {attempts}/{max_attempts}...")
                     if attempts < max_attempts:
                         await asyncio.sleep(delay)
                     else:
